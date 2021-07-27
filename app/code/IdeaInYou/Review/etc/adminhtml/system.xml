@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+
+        <tab id="idea_in_you" translate="label" sortOrder="0">
+            <label>Idea In You</label>
+        </tab>
+
+        <section id="review" translate="label" type="text" sortOrder=" 0" showInDefault="1" showInWebsite="1" showInStore="1">
+              <class>separator-top</class>
+            <label>Review </label>
+            <tab>idea_in_you</tab>
+            <resource>IdeaInYou_Review::content</resource>
+            <group id="general" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+
+                <field id="enable" translate="label" type="select" sortOrder="0" showInDefault="1" canRestore="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <backend_model>Magento\Catalog\Model\Indexer\Category\Flat\System\Config\Mode</backend_model>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="title" translate="label " type="textarea" sortOrder="10" showInDefault="1" canRestore="1" showInWebsite="1" showInStore="1">
+                    <label>Title for Frontend</label>
+                </field>
+
+            </group>
+        </section>
+
+<!--        storeLocator-->
+        <section id="storelocator" translate="label" type="text" sortOrder=" 10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Store Locator </label>
+            <tab>idea_in_you</tab>
+            <resource>IdeaInYou_Review::content</resource>
+            <group id="general" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Store Info</label>
+
+
+
+<!--                <field id="country" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" canRestore="1">-->
+<!--                    <label>Country</label>-->
+<!--                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>-->
+<!--                    <can_be_empty>1</can_be_empty>-->
+<!--                </field>-->
+
+                <field id="country_id" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1">
+                    <label>Country</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <frontend_class>countries</frontend_class>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+
+                <field id="region_id" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1">
+                    <label>Region/State</label>
+                </field>
+
+                <field id="postcode" translate="label" type="text" sortOrder="45" showInDefault="1" showInWebsite="1">
+                    <label>ZIP/Postal Code</label>
+                </field>
+
+                <field id="city" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1">
+                    <label>City</label>
+                </field>
+
+                <field id="street_line1" translate="label" type="text" sortOrder="65" showInDefault="1" showInWebsite="1">
+                    <label>Street Address</label>
+                </field>
+
+                <field id="phone" translate="label" type="text" sortOrder="75" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store Phone Number</label>
+                </field>
+
+                <field id="name" translate="label" type="text" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store Name</label>
+                </field>
+
+                <field id="firstday" translate="label" type="select" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>First Day of Week</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Weekdays</source_model>
+                </field>
+
+
+                <field id="weekend" translate="label" type="multiselect" sortOrder="105" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Weekend Days</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Weekdays</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+
+                <field id="hours" translate="label" type="text" sortOrder="115" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Store Hours of Operation</label>
+                </field>
+
+
+            </group>
+        </section>
+        <!--    end storeLocator-->
+
+    </system>
+</config>

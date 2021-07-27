@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="product.info.details">
+            <block class="IdeaInYou\Review\Block\Product\Review" name="review1.tab" as="review1"
+                   template="IdeaInYou_Review::product/view/review.phtml" group="detailed_info" cacheable="false">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">Review 1</argument>
+                    <argument translate="true" name="message" xsi:type="string">Write review here!</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

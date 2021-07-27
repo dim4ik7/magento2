@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="IdeaInYou_Review::general" title="IdeaInYou" translate="title" module="IdeaInYou_Review" sortOrder="80" dependsOnModule="IdeaInYou_Review" resource="IdeaInYou_Review::content"/>
+        <add id="IdeaInYou_Review::review" title="Review Grid" translate="title" module="IdeaInYou_Review" sortOrder="0" parent="IdeaInYou_Review::general" action="ideainyou/review" resource="IdeaInYou_Review::content"/>
+        <add id="IdeaInYou_Review::stores" title="Review Stores" translate="title" module="IdeaInYou_Review" sortOrder="10" parent="IdeaInYou_Review::general" action="ideainyou/review" resource="IdeaInYou_Review::content"/>
+    </menu>
+</config>

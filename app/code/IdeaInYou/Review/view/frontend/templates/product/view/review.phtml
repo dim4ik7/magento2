@@ -1,0 +1,38 @@
+<?php
+/**
+ * @var \IdeaInYou\Review\Block\Product\Review $block
+ */
+$collection = $block->getReviews();
+?>
+<h4><?= $block->getMessage() ?></h4>
+<hr>
+<?php foreach ($collection as $review) : ?>
+    <div>Author: <span><?= $review->getAuthor() ?></span></div>
+    <div>Content: <span><?= $review->getContent() ?></span></div>
+    <div>Update Time: <span><?= $review->getUpdateTime() ?></span></div>
+    <hr>
+<?php endforeach; ?>
+<div class="message-success success message" style="display: none" id="addReviewMessage">
+    <div><?= __('Thank You for Review') ?></div>
+</div>
+<form id="review_form">
+    <h3 class="title"><?= __('Write new review') ?></h3>
+    <input class="<?= $block->getIsLoggedIn() ? "readonlyInput" : ''?>" type="text" id="author" placeholder="Author" name="author" value="<?=
+    $block->getIsLoggedIn() ? $block->getCurrentCustomer()->getFirstname() . ' ' . $block->getCurrentCustomer()->getLastname() : ''
+    ?>" <?= $block->getIsLoggedIn() ? "readonly" : ''?>>
+    <input type="text" id="content" placeholder="Content" name="content">
+    <input type="hidden" name="product_id" id="product_id" value="<?= $block->getProduct()->getId() ?>">
+    <button type="submit">Submit</button>
+</form>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "reviewForm": {
+                "formSelector": "#review_form",
+                "submitUrl": "<?= $block->getUrl('ideainyou_review/ajax/save') ?>",
+                "messageSelector": "#addReviewMessage"
+            }
+        }
+    }
+</script>

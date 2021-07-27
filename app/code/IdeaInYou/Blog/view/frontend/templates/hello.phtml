@@ -1,0 +1,17 @@
+<?php
+
+/** @var  \IdeaInYou\Blog\Block\Hello $block*/
+?>
+<h1>asdfghj</h1>
+<h1><?= $block->getHelloMessage() ?></h1>
+
+<h2><?= $block->getRequest()->getParam('id') ?></h2>
+<h2><?= $block->getRequest()->getParam('cat') ?></h2>
+<h2><?= $block->getRequest()->getParam('page') ?></h2>
+
+
+
+
+<?php //endforeach; ?>
+<?php var_dump($block->getReviewById(4)->getData()); ?>
+<h2>size: <?= $block->getReviewCollection()->getSize() ?></h2>

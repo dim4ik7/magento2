@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+
+
+        <referenceContainer name="header.container">
+            <container name="header.info.block.wrapper" htmlTag="div" htmlClass="header-info-wrapper" before="-">
+                <block class="Magento\Cms\Block\Block" name="header.info.block" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header_info</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Cms\Block\Block" name="header.social.block" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">header_social</argument>
+                    </arguments>
+                </block>
+
+            </container>
+        </referenceContainer>
+
+
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+<!--        <referenceContainer name="main">-->
+<!--            <block class="Magento\Cms\Block\Block" name="main.banner.block.image" after="main-banner-content">-->
+<!--                <arguments>-->
+<!--                    <argument name="block_id" xsi:type="string">banner_image</argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceContainer>-->
+
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer.info.block" after="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_info</argument>
+                </arguments>
+            </block>
+
+
+            <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" after="footer_links" template="Magento_Store::switch/stores.phtml"/>
+        </referenceContainer>
+
+
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceContainer name="header.panel.wrapper" remove="true"/>
+        <referenceContainer name="copyright" remove="true"/>
+
+<!--        <move element="copyright" destination="before.body.end"/>-->
+        <move element="header.links" destination="header-wrapper" after="-" />
+        <move element="navigation.sections" destination="header-wrapper" after="logo" />
+        <move element="form.subscribe" destination="main.content" after="-" />
+    </body>
+</page>

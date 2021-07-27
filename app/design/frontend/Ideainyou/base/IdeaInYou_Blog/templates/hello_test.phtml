@@ -1,0 +1,37 @@
+<?php
+
+/** @var  \IdeaInYou\Blog\Block\Hello $block
+* @var \Magento\Framework\Escaper $escaper
+ */
+$block->createReview();
+?>
+
+<div class="banner-wrapper">
+    <?php
+    echo $this->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('index_page_banner')
+        ->toHtml();
+    echo $this->getLayout()
+        ->createBlock('Magento\Cms\Block\Block')
+        ->setBlockId('banner_image')
+        ->toHtml();
+    ?>
+
+</div>
+
+
+
+<!--<div class="offer-wrapper">-->
+<!--    <div class="offer-item"><h3>Special offer</h3><p>Shop Big Save Big</p></div>-->
+<!--    <div class="offer-item"><h3>Special offer</h3><p>Shop Big Save Big</p></div>-->
+<!--    <div class="offer-item"><h3>Special offer</h3><p>Shop Big Save Big</p></div>-->
+<!--    <div class="offer-item"><h3>Special offer</h3><p>Shop Big Save Big</p></div>-->
+<!---->
+<!--</div>-->
+<div class="offer-wrapper">
+    <div class="offer-item"><h3><?php echo $escaper->escapeHtml(('Special offer')) ?></h3><p><?php echo $escaper->escapeHtml(('Shop Big Save Big')) ?></p></div>
+    <div class="offer-item"><h3><?php echo $escaper->escapeHtml(('Special offer')) ?></h3><p><?php echo $escaper->escapeHtml(('Shop Big Save Big')) ?></p></div>
+    <div class="offer-item"><h3><?php echo $escaper->escapeHtml(('Special offer')) ?></h3><p><?php echo $escaper->escapeHtml(('Shop Big Save Big')) ?></p></div>
+    <div class="offer-item"><h3><?php echo $escaper->escapeHtml(('Special offer')) ?></h3><p><?php echo $escaper->escapeHtml(('Shop Big Save Big')) ?></p></div>
+</div>
